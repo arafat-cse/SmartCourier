@@ -3,22 +3,18 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SmartCourier.Models
 {
-    public class Bank
+    public class Staff
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int BankId { get; set; }
-        [ForeignKey("Company")]
-        public int CompanyID { get; set; }
-        public string? Address { get; set; }
-        public string? AccountNo { get; set; }
-        [ForeignKey("Branch")]
-        public string? BranchName { get; set; }
+        public int StaffId { get; set; }
+        public string? StaffName { get; set; }
+        public string? Email { get; set; }
+        public string? Designation { get; set; }
         public string? CreateBy { get; set; }
         public DateTime? CreateDate { get; set; }
-        public string UpdateBy { get; set; }
+        public DateTime UpdateBy { get; set; }
         public DateTime? UpdateDate { get; set; }
         public bool? IsActive { get; set; }
-
 
     }
 }
