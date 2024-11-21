@@ -34,6 +34,11 @@ namespace SmartCourier.Models
         public DateTime CreateDate { get; set; }
         public string UpdateBy { get; set; }
         public DateTime UpdateDate { get; set; }
+        public bool sendingBranch { get; set; }
+        public bool percelSendingDestribution { get; set; }
+        public bool recebingDistributin { get; set; }
+        public bool recebingBranch { get; set; }
+        public bool recebingReceber { get; set; }
         public bool IsActive { get; set; }
 
     }
