@@ -14,7 +14,7 @@ namespace SmartCourier.Models
         public int customerId { get; set; }
         public int paymentModeId { get; set; }
         [ForeignKey("Parcel")]
-        public int ParcelsID { get; set; }
+        public int ParcelsId { get; set; }
         public string? createBy { get; set; }
         public DateTime createDate { get; set; }
         public string? updateBy { get; set; }
