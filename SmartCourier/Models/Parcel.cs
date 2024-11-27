@@ -9,30 +9,30 @@ namespace SmartCourier.Models
         public int ParcelId { get; set; }
         public string ParcelCode { get; set; }
         [ForeignKey("Customer")]
-        public int SenderCustomerID { get; set; }
+        public int SenderCustomerId { get; set; }
         [ForeignKey("Customer")]
-        public int ReceiverCustomerID { get; set; }
+        public int ReceiverCustomerId { get; set; }
         public DateTime SendTime { get; set; }
         public DateTime ReceiveTime { get; set; }
         [ForeignKey("Branch")]
-        public int SenderBranchID { get; set; }
+        public int SenderBranchId { get; set; }
         [ForeignKey("Branch")]
-        public int ReceiverBranchID { get; set; }
+        public int ReceiverBranchId { get; set; }
         public DateTime EstimatedReceiveTime { get; set; }
         public bool IsPaid { get; set; }
         [ForeignKey("Van")]
         public int? VanID { get; set; }
         [ForeignKey("Driver")]
-        public int? DriverID { get; set; }
+        public int? driverId { get; set; }
         [ForeignKey("")]
-        public int? DeliveryChargeID { get; set; }
+        public int? deliveryChargeId { get; set; }
         [ForeignKey("Parcel")]
-        public int? ParcelTypeID { get; set; }
-        public decimal Price { get; set; }
-        public decimal Weight { get; set; }
-        public string CreateBy { get; set; }
+        public int? parcelTypeId { get; set; }
+        public decimal price { get; set; }
+        public decimal weight { get; set; }
+        public string createBy { get; set; }
         public DateTime CreateDate { get; set; }
-        public string UpdateBy { get; set; }
+        public string updateBy { get; set; }
         public DateTime UpdateDate { get; set; }
         public bool sendingBranch { get; set; }
         public bool percelSendingDestribution { get; set; }
@@ -43,3 +43,4 @@ namespace SmartCourier.Models
 
     }
 }
+ 

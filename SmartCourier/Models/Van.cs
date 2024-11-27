@@ -6,11 +6,11 @@ namespace SmartCourier.Models
     public class Van
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int VanId { get; set; }
-        public string RegistrationNo { get; set; }
-        public DateTime? CreatedDate { get; set; }
-        public int UpdateBy { get; set; }
-        public DateTime UpdateDate { get; set; }
+        public int vanId { get; set; }
+        public string? registrationNo { get; set; }
+        public DateTime? createdDate { get; set; }
+        public int updateBy { get; set; }
+        public DateTime updateDate { get; set; }
         public bool IsActive { get; set; }
 
     }
