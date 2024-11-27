@@ -6,14 +6,14 @@ namespace SmartCourier.Models
     public class Staff
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int StaffId { get; set; }
-        public string? StaffName { get; set; }
-        public string? Email { get; set; }
-        public string? Designation { get; set; }
-        public string? CreateBy { get; set; }
-        public DateTime? CreateDate { get; set; }
-        public DateTime UpdateBy { get; set; }
-        public DateTime? UpdateDate { get; set; }
+        public int staffId { get; set; }
+        public string? staffName { get; set; }
+        public string? email { get; set; }
+        public string? designation { get; set; }
+        public string? createBy { get; set; }
+        public DateTime? createDate { get; set; }
+        public DateTime updateBy { get; set; }
+        public DateTime? updateDate { get; set; }
         public bool? IsActive { get; set; }
 
     }

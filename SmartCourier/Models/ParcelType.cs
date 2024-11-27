@@ -2,12 +2,12 @@
 {
     public class ParcelType
     {
-        public int ParcelTypeID { get; set; }
-        public string ParcelTypeName { get; set; }
-        public string CreateBy { get; set; }
-        public DateTime CreateDate { get; set; }
-        public string UpdateBy { get; set; }
-        public DateTime? UpdateDate { get; set; }
+        public int parcelTypeId { get; set; }
+        public string parcelTypeName { get; set; }
+        public string? createBy { get; set; }
+        public DateTime? createDate { get; set; }
+        public string? updateBy { get; set; }
+        public DateTime? updateDate { get; set; }
         public bool IsActive { get; set; }
 
     }

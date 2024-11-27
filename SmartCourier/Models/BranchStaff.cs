@@ -7,7 +7,7 @@ namespace SmartCourier.Models
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int branchStaffId {  get; set; }
-        public string branchStaffName { get; set; }
+        public string? branchStaffName { get; set; }
         [ForeignKey("Staff")]
         public int staffId {  get; set; }
     }

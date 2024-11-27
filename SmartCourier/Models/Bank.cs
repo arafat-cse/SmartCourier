@@ -6,17 +6,17 @@ namespace SmartCourier.Models
     public class Bank
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int BankId { get; set; }
+        public int bankId { get; set; }
         [ForeignKey("Company")]
-        public int CompanyID { get; set; }
-        public string? Address { get; set; }
-        public string? AccountNo { get; set; }
+        public int companyId { get; set; }
+        public string? address { get; set; }
+        public string? accountNo { get; set; }
         [ForeignKey("Branch")]
-        public string? BranchName { get; set; }
-        public string? CreateBy { get; set; }
-        public DateTime? CreateDate { get; set; }
-        public string UpdateBy { get; set; }
-        public DateTime? UpdateDate { get; set; }
+        public string? branchName { get; set; }
+        public string? createBy { get; set; }
+        public DateTime? createDate { get; set; }
+        public string? updateBy { get; set; }
+        public DateTime? updateDate { get; set; }
         public bool? IsActive { get; set; }
 
 

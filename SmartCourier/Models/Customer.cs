@@ -6,15 +6,15 @@ namespace SmartCourier.Models
     public class Customer
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int CustomerId { get; set; }
-        public string CustomerName { get; set; }
-        public string CustomerEmail { get; set; }
-        public string CustomerMobile { get; set; }
-        public string Address { get; set; }
-        public string CreateBy { get; set; }
+        public int customerId { get; set; }
+        public string? customerName { get; set; }
+        public string? customerEmail { get; set; }
+        public string? customerMobile { get; set; }
+        public string? address { get; set; }
+        public string? createBy { get; set; }
         public DateTime CreateDate { get; set; }
-        public string UpdateBy { get; set; }
-        public DateTime UpdateDate { get; set; }
+        public string? updateBy { get; set; }
+        public DateTime updateDate { get; set; }
         public bool IsActive { get; set; }
 
     }
