@@ -1,0 +1,56 @@
+﻿
+@model IEnumerable<SmartCourier.Models.Bank>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Bank List</h1>
+
+<a asp-action="Create" class="btn btn-primary mb-3">Add New Bank</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Bank ID</th>
+            <th>Company</th>
+            <th>Address</th>
+            <th>Account No</th>
+            <th>Branch Name</th>
+            <th>Created By</th>
+            <th>Created Date</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Any())
+        {
+            int count = 1;
+            foreach (var bank in Model)
+            {
+                <tr>
+                    <td>@count</td>
+                    <td>@bank.bankId</td>
+                    <td>@bank.Companys.companyName</td> 
+                    <td>@bank.address</td>
+                    <td>@bank.accountNo</td>
+                    <td>@bank.branchName</td>
+                    <td>@bank.createBy</td>
+                    <td>@bank.createDate?.ToString("dd-MM-yyyy")</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@bank.bankId" class="btn btn-warning btn-sm">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@bank.bankId" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+                count++;
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="9" class="text-center">No Banks Found</td>
+            </tr>
+        }
+    </tbody>
+</table>

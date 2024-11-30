@@ -1,0 +1,58 @@
+﻿@model SmartCourier.Models.Bank
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create Bank</h1>
+
+<form asp-action="Create" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="companyId" class="form-label">Company</label>
+        <select asp-for="companyId" class="form-control" asp-items="ViewBag.Companys">
+            <option value="">Select a Company</option>
+        </select>
+    </div>
+
+
+    <div class="form-group">
+        <label asp-for="address" class="form-label">Address</label>
+        <input asp-for="address" class="form-control" />
+        <span asp-validation-for="address" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="accountNo" class="form-label">Account Number</label>
+        <input asp-for="accountNo" type="number" class="form-control" />
+        <span asp-validation-for="accountNo" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="branchName" class="form-label">Branch Name</label>
+        <input asp-for="branchName" class="form-control" />
+        <span asp-validation-for="branchName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="createBy" class="form-label">Created By</label>
+        <input asp-for="createBy" class="form-control" />
+        <span asp-validation-for="createBy" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="createDate" class="form-label">Created Date</label>
+        <input asp-for="createDate" type="date" class="form-control" />
+        <span asp-validation-for="createDate" class="text-danger"></span>
+    </div>
+
+    <div class="form-group form-check">
+        <input type="checkbox" name="name" value="" class="form-check-input" />
+        <label asp-for="IsActive" class="form-check-label">Is Active</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,20 @@
+﻿@model SmartCourier.Models.Bank
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete Bank</h1>
+<p>Are you sure you want to delete this bank?</p>
+
+<div>
+    <h4>@Model.branchName</h4>    
+    <p>@Model.createBy</p>
+    <p>@Model.createDate</p>
+    <p>@Model.address</p>
+</div>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="bankId" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
