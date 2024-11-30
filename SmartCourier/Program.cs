@@ -1,8 +1,12 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using SmartCourier.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddDbContext<CourierDbContext>(opt=>opt.UseSqlServer(builder.Configuration.GetConnectionString("AppCon")));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
