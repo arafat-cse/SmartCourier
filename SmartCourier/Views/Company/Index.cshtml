@@ -1,0 +1,35 @@
+﻿@model IEnumerable<SmartCourier.Models.Company>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<h1>Company List</h1>
+<a asp-action="Create" class="btn btn-primary">Create New Company</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Company ID</th>
+            <th>Company Name</th>
+            <th>Company CreateBy</th>
+            <th>Company CreateDate</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var company in Model)
+        {
+            <tr>
+                <td>@company.companyId</td>
+                <td>@company.companyName</td>
+                <td>@company.createBy</td>
+                <td>@company.createDate</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@company.companyId" class="btn btn-warning">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@company.companyId" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

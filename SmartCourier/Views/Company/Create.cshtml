@@ -1,0 +1,34 @@
+﻿@model SmartCourier.Models.Company
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h1>Create Company</h1>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="companyName" class="form-label"></label>
+        <input asp-for="companyName" class="form-control" />
+        <span asp-validation-for="companyName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="createBy" class="form-label">Created By</label>
+        <input asp-for="createBy" class="form-control" />
+        <span asp-validation-for="createBy" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="createDate" class="form-label">Created Date</label>
+        <input asp-for="createDate" type="date" class="form-control" />
+        <span asp-validation-for="createDate" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
