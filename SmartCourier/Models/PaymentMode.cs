@@ -9,6 +9,7 @@
         public string? updateBy { get; set; }
         public DateTime? updateDate { get; set; }
         public bool? IsActive { get; set; }
+        public virtual ICollection<Invoice>? Invoices { get; set; }
 
     }
 }

@@ -12,6 +12,7 @@ namespace SmartCourier.Models
         public int updateBy { get; set; }
         public DateTime updateDate { get; set; }
         public bool IsActive { get; set; }
+        public virtual ICollection <Parcel>? Parcels { get; set; }
 
     }
 }

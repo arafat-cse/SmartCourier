@@ -12,14 +12,19 @@ namespace SmartCourier.Models
         public string? particular { get; set; }
         [ForeignKey("Customer")]
         public int customerId { get; set; }
+        public virtual Customer? Customers { get; set; }
+        [ForeignKey("PaymentMode")]
         public int paymentModeId { get; set; }
+        public virtual PaymentMode? PaymentModes { get; set; }
         [ForeignKey("Parcel")]
         public int ParcelsID { get; set; }
+        public virtual Parcel? Parcels { get; set; }
         public string? createBy { get; set; }
         public DateTime createDate { get; set; }
         public string? updateBy { get; set; }
         public string? updateDate { get; set; }
         public bool IsActive { get; set; }
+        
 
     }
 }
