@@ -7,8 +7,9 @@ namespace SmartCourier.Models
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int deliveryChargeId { get; set; }
-        [ForeignKey("Parcel")]
+        [ForeignKey("ParcelType")]
         public int parcelTypeId { get; set; }
+        public virtual ParcelType? ParcelTypes { get; set; }
         public double weight { get; set; }
         public decimal price { get; set; }
         public string? createBy { get; set; }
@@ -16,6 +17,7 @@ namespace SmartCourier.Models
         public string? updateBy { get; set; }
         public DateTime? updateDate { get; set; }
         public bool IsActive { get; set; }
+        public virtual ICollection<Parcel>? Parcels { get; set; }
 
     }
 }

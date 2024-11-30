@@ -17,7 +17,7 @@ namespace SmartCourier.Models
         public DbSet<DeliveryCharge> DeliveryCharges { get; set; }
         public DbSet<Invoice> Invoices { get; set; }
         public DbSet<Parcel> Parsers { get; set; }
-        public DbSet<ParcelType> ParsersType { get; set; }
+        public DbSet<ParcelType> ParsersTypes { get; set; }
         public DbSet<PaymentMode> paymentModes { get; set; }
         public DbSet<Van> vans { get; set; }
     }

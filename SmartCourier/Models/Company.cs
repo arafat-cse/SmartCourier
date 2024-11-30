@@ -10,6 +10,7 @@ namespace SmartCourier.Models
         public string? companyName { get; set; }
         public string? createBy { get; set; }
         public string? createDate { get; set; }
-
+        public virtual ICollection<Bank>? Banks { get; set; }
+        public virtual ICollection<Parcel>? Parcels { get; set; }
     }
 }

@@ -10,5 +10,6 @@ namespace SmartCourier.Models
         public string? branchStaffName { get; set; }
         [ForeignKey("Staff")]
         public int staffId {  get; set; }
+        public virtual Staff? Staffs { get; set; }
     }
 }

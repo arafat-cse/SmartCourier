@@ -7,32 +7,33 @@ namespace SmartCourier.Models
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ParcelId { get; set; }
-        public string ParcelCode { get; set; }
-        [ForeignKey("Customer")]
-        public int SenderCustomerId { get; set; }
-        [ForeignKey("Customer")]
+        public string? ParcelCode { get; set; }       
+        public int SenderCustomerId { get; set; }      
         public int ReceiverCustomerId { get; set; }
         public DateTime SendTime { get; set; }
         public DateTime ReceiveTime { get; set; }
         [ForeignKey("Branch")]
         public int SenderBranchId { get; set; }
+        public virtual Branch? Branchs { get; set; }
         [ForeignKey("Branch")]
-        public int ReceiverBranchId { get; set; }
+        public int ReceiverBranchId { get; set; }       
         public DateTime EstimatedReceiveTime { get; set; }
         public bool IsPaid { get; set; }
         [ForeignKey("Van")]
-        public int? VanID { get; set; }
-        [ForeignKey("Driver")]
+        public int? VanId { get; set; }
+        public virtual Van? Vans { get; set; }     
         public int? driverId { get; set; }
-        [ForeignKey("")]
+        [ForeignKey("DeliveryCharge")]
         public int? deliveryChargeId { get; set; }
-        [ForeignKey("Parcel")]
+        public virtual DeliveryCharge? DeliveryCharges { get; set; }
+        [ForeignKey("ParcelType")]
         public int? parcelTypeId { get; set; }
+        public virtual ParcelType? ParcelTypes { get; set; }
         public decimal price { get; set; }
         public decimal weight { get; set; }
-        public string createBy { get; set; }
+        public string? createBy { get; set; }
         public DateTime CreateDate { get; set; }
-        public string updateBy { get; set; }
+        public string? updateBy { get; set; }
         public DateTime UpdateDate { get; set; }
         public bool sendingBranch { get; set; }
         public bool percelSendingDestribution { get; set; }
@@ -40,6 +41,7 @@ namespace SmartCourier.Models
         public bool recebingBranch { get; set; }
         public bool recebingReceber { get; set; }
         public bool IsActive { get; set; }
+        public virtual ICollection<Invoice>? Invoices { get; set; }
 
     }
 }
