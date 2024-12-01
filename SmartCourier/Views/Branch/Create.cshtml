@@ -1,35 +1,21 @@
-﻿@model SmartCourier.Models.Bank
+﻿@model SmartCourier.Models.Branch
 @{
     ViewData["Title"] = "Create";
 }
 
-<h1>Create Bank</h1>
+<h1>Create Branch</h1>
 
-<form asp-action="Create" method="post" enctype="multipart/form-data">
+<form asp-action="Create" method="post">
     <div class="form-group">
-        <label asp-for="companyId" class="form-label">Company</label>
-        <select asp-for="companyId" class="form-control" asp-items="ViewBag.Companys">
-            <option value="">Select a Company</option>
-        </select>
+        <label asp-for="branchName" class="form-label">Branch Name</label>
+        <input asp-for="branchName" class="form-control" />
+        <span asp-validation-for="branchName" class="text-danger"></span>
     </div>
-
 
     <div class="form-group">
         <label asp-for="address" class="form-label">Address</label>
         <input asp-for="address" class="form-control" />
         <span asp-validation-for="address" class="text-danger"></span>
-    </div>
-
-    <div class="form-group">
-        <label asp-for="accountNo" class="form-label">Account Number</label>
-        <input asp-for="accountNo" type="number" class="form-control" />
-        <span asp-validation-for="accountNo" class="text-danger"></span>
-    </div>
-
-    <div class="form-group">
-        <label asp-for="branchName" class="form-label">Branch Name</label>
-        <input asp-for="branchName" class="form-control" />
-        <span asp-validation-for="branchName" class="text-danger"></span>
     </div>
 
     <div class="form-group">
@@ -43,15 +29,11 @@
         <input asp-for="createDate" type="date" class="form-control" />
         <span asp-validation-for="createDate" class="text-danger"></span>
     </div>
-    <div class="form-group form-check">
-        <!-- Hidden input to ensure a value is sent when the checkbox is unchecked -->
-        <input type="hidden" name="IsActive" value="false" />
 
-        <!-- Checkbox input -->
-        <input type="checkbox" name="IsActive" class="form-check-input" value="true" />
+    <div class="form-group form-check">
+        <input  type="checkbox" class="form-check-input" />
         <label asp-for="IsActive" class="form-check-label">Is Active</label>
     </div>
-
 
     <button type="submit" class="btn btn-primary">Create</button>
     <a asp-action="Index" class="btn btn-secondary">Cancel</a>

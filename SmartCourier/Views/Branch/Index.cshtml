@@ -1,0 +1,49 @@
+﻿@model IEnumerable<SmartCourier.Models.Branch>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<h1>Branch List</h1>
+
+<a asp-action="Create" class="btn btn-primary mb-3">Create New Branch</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Branch Name</th>
+            <th>Address</th>
+            <th>Created By</th>
+            <th>Created Date</th>
+            <th>Is Active</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Any())
+        {
+            int count = 1;
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@count</td>
+                    <td>@item.branchName</td>
+                    <td>@item.address</td>
+                    <td>@item.createBy</td>
+                    <td>@item.createDate?.ToString("dd-MM-yyyy")</td>
+                    <td>
+                        <input type="checkbox" @(item.IsActive == false ? "checked" : "") disabled />
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.branchId" class="btn btn-warning btn-sm">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@item.branchId" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+                count++;
+            }
+        }
+       
+    </tbody>
+</table>
