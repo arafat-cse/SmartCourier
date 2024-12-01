@@ -14,7 +14,7 @@ namespace SmartCourier.Models
         public DateTime? createDate { get; set; }
         public DateTime updateBy { get; set; }
         public DateTime? updateDate { get; set; }
-        public bool? IsActive { get; set; }
+        public bool IsActive { get; set; }
         public virtual ICollection<Branch>? Branchs { get; set; }
 
 

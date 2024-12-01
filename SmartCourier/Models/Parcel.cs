@@ -35,6 +35,7 @@ namespace SmartCourier.Models
         public DateTime CreateDate { get; set; }
         public string? updateBy { get; set; }
         public DateTime UpdateDate { get; set; }
+        public bool parent { get; set; }
         public bool sendingBranch { get; set; }
         public bool percelSendingDestribution { get; set; }
         public bool recebingDistributin { get; set; }
