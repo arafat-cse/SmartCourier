@@ -41,7 +41,6 @@ namespace SmartCourier.Controllers
             if (ModelState.IsValid)
             {
                 bank.createDate = DateTime.Now;
-                bank.IsActive = true;
                 _db.Banks.Add(bank);
                 await _db.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -49,6 +48,7 @@ namespace SmartCourier.Controllers
             ViewBag.Companys = _db.Companys.ToList();
             return View(bank);
         }
+
 
         // GET: Edit Bank
         public IActionResult Edit(int id)
