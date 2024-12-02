@@ -9,6 +9,7 @@ namespace SmartCourier.Models
         public int branchId { get; set; }
         public string? branchName { get; set; }
         public string? address { get; set; }
+        public int parent { get; set; }
         public string? createBy { get; set; }
         public DateTime? createDate { get; set; }
         public string? updateBy { get; set; }
